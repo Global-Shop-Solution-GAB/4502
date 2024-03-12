@@ -1,0 +1,25 @@
+These are the programs Called from a GAB Script: Text delimited File must be in Global\Files\APBATCH_UPLOAD.TXT, delimited with *!*. 
+AP0043UP1: 
+Fields: Post-Date, Emp-ID, Inv-no, Inv-date, Amount, Expense Account, WO, Batch-UPLD-Field. (For HVS) 
+Creates a batch for each invoice. 
+
+AP043UP2: 
+Fields: Batch-number, Post-date, Emp-ID, Inv-no, Inv-date, Amount, Expense Account, WO 
+Uses the batch number passed.(For ECP) 
+
+AP043UPL: 
+Fields: Post-Date, Emp-ID, Inv-no, Inv-date, Amount, Expense Account, WO 
+Creates a batch for each invoice.(For NPS)
+
+This project will create an AP Batch from the Cash Receipt file selected.    
+ 
+Specification  From a Custom Menu item the user will select a cash receipt file to process. This file will need to be in a csv format. 
+Once the file is select the information will be parsed and check against the Invoice information in Global Shop. 
+
+If the Invoice number or Invoice amount does not match GSS the record will be flagged. 
+
+The user will have a screen display after the information has been checked and display the either a Y if the Invoice Number and Amount Match the information from GSS. 
+If either of those fields do not match then a N will display in the Grid column. 
+At this point the user will have the option to change either the Invoice Number, Invoice Amount or both prior to creating the AP Batch. 
+If any of the records are still flagged as N they will be ignored by the Batch creation process and the user will be notified that there are still unmatched records. 
+There is a sample file attached to this call that will be used for the project.    
